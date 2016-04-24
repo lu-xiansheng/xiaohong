@@ -40,13 +40,13 @@
                 android:layout_height="49dp"
                 android:src="@drawable/me" />
 
-            <TextView
+           <!--  <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="L.Z."
-                android:textSize="18sp" >
-            </TextView>
+                android:textSize="18sp" > 
+            </TextView>-->
         </LinearLayout>
 
        

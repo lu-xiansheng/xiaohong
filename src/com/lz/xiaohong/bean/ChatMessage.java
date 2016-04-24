@@ -15,6 +15,17 @@ public class ChatMessage {
 	private Type type;
 	private Date date;
 	
+	
+	public ChatMessage() {
+	}
+
+	public ChatMessage(String msg, Type type, Date date) {
+		
+		this.msg = msg;
+		this.type = type;
+		this.date = date;
+	}
+
 	public enum Type {
 		INCOMING,OUTCOMING
 	}
