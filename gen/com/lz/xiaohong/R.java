@@ -976,7 +976,22 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int bottom_bar=0x7f020057;
+        public static final int chat_bg_default=0x7f020058;
+        public static final int chatfrom_bg_focused=0x7f020059;
+        public static final int chatfrom_bg_normal=0x7f02005a;
+        public static final int chatfrom_bg_pressed=0x7f02005b;
+        public static final int chatto_bg_focused=0x7f02005c;
+        public static final int chatto_bg_normal=0x7f02005d;
+        public static final int chatto_bg_pressed=0x7f02005e;
+        public static final int ic_launcher=0x7f02005f;
+        public static final int icon=0x7f020060;
+        public static final int login_edit_normal=0x7f020061;
+        public static final int me=0x7f020062;
+        public static final int send_btn_bg=0x7f020063;
+        public static final int send_btn_normal=0x7f020064;
+        public static final int send_btn_pressed=0x7f020065;
+        public static final int title_bar=0x7f020066;
     }
     public static final class id {
         public static final int action_bar=0x7f05001a;
@@ -992,7 +1007,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f05002f;
         public static final int action_mode_bar_stub=0x7f05002e;
         public static final int action_mode_close_button=0x7f050022;
-        public static final int action_settings=0x7f050042;
+        public static final int action_settings=0x7f05004b;
         public static final int activity_chooser_view_content=0x7f050023;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1009,6 +1024,15 @@ containing a value of this type.
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f050028;
+        public static final int id_form_msg_date=0x7f050047;
+        public static final int id_from_msg_info=0x7f050048;
+        public static final int id_input_msg=0x7f050045;
+        public static final int id_listview_msgs=0x7f050046;
+        public static final int id_ly_bottom=0x7f050043;
+        public static final int id_ly_top=0x7f050042;
+        public static final int id_send_msg=0x7f050044;
+        public static final int id_to_msg_date=0x7f050049;
+        public static final int id_to_msg_info=0x7f05004a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
         public static final int left_icon=0x7f050031;
@@ -1098,7 +1122,9 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030016;
         public static final int abc_search_view=0x7f030017;
         public static final int activity_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int item_from_msg=0x7f030019;
+        public static final int item_to_msg=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
