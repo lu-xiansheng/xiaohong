@@ -6,9 +6,19 @@ package com.lz.xiaohong.Utils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URLEncoder;
+import java.util.Date;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.lz.xiaohong.bean.ChatMessage;
+import com.lz.xiaohong.bean.ChatMessage.Type;
+import com.lz.xiaohong.bean.Result;
 
 /**
  * @author L.Z.
@@ -20,7 +30,28 @@ public class HttpUtils {
 	/*******API接入密钥***********/
 	private static final String API_KEY = "20c920ef739be07adaf63269182dd35c";
 	
-	private static String doGet(String msg) {
+	/**发送一个消息，得到一个消息  
+	 * @param msg
+	 * @return
+	 */
+	public static ChatMessage sendMessage(String msg) {
+		ChatMessage chatMessage = new ChatMessage();
+		String isonRes = doGet(msg);
+		Gson gson = new Gson();
+		Result result = null;
+		try {
+			result = gson.fromJson(isonRes, Result.class);
+			chatMessage.setMsg(result.getText());
+		}catch(JsonSyntaxException e) {
+			chatMessage.setMsg("服务器繁忙，请稍后再试");
+		}
+		chatMessage.setDate(new Date());
+		chatMessage.setType(Type.INCOMING);
+		
+		return chatMessage;
+	}
+	
+	public static String doGet(String msg) {
 		String result = "";
 		InputStream is = null;
 		ByteArrayOutputStream baos = null;
@@ -29,7 +60,8 @@ public class HttpUtils {
 		try {
 			java.net.URL urlNet = new java.net.URL(url);
 			/*******建立url连接*************/
-			HttpsURLConnection conn = (HttpsURLConnection) urlNet.openConnection();
+			HttpURLConnection conn = (HttpURLConnection) urlNet
+					.openConnection();
 			/*******设置conn参数*************/
 			conn.setReadTimeout(5*1000);
 			conn.setConnectTimeout(5*1000);
@@ -75,7 +107,13 @@ public class HttpUtils {
 	 * @return
 	 */
 	private static String setParams(String msg) {
-		String url = URL+"?key="+ API_KEY +"&info="+ msg;
+		String url = "";
+		try {
+			url = URL+"?key="+ API_KEY +"&info="+ URLEncoder.encode(msg, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return url;
 	}
 }
