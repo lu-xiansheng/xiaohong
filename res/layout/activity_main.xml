@@ -51,7 +51,6 @@
         android:id="@+id/id_listview_msgs"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:transcriptMode="alwaysScroll"
         android:layout_above="@id/id_ly_bottom"
         android:layout_below="@id/id_ly_top"
         android:divider="@null"
